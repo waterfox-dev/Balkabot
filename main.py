@@ -9,6 +9,9 @@ from utils.karaokOS import *
 import discord 
 import json
 
+with open("data/profile", 'r', encoding='utf8') as config :
+    config = json.load(config)
+
 
 intents = discord.Intents.default()
 intents.members = True
@@ -56,4 +59,4 @@ async def karaoke(ctx : commands.Context) :
         await ctx.send(result)
         
 
-bot.run('OTQwNTU2MzUxNjAyNTYxMDI0.YgJHXA.04enWOP_uxmGwZKof3zGQhJJhIU')
+bot.run(config['key'])
